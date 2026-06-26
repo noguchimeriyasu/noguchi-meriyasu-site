@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合資会社 野口莫大小 — 名古屋のカットソーメーカー</title>
+<meta name="description" content="名古屋市中村区の縫製メーカー。1957年創業。カットソーの企画・パターン・縫製・特殊加工まで一貫対応。小ロット短サイクルから協力工場ネットワークによる大ロットまで。">
+<style>
+  :root{
+    --ink:#16140f;        /* 支配色：深い炭 */
+    --paper:#e8e3d7;      /* 生成りの紙 */
+    --paper-2:#dcd6c6;
+    --rust:#b84c1e;       /* 錆びた鉄の赤橙：鋭いアクセント */
+    --line:#3a352b;
+    --muted:#8a8170;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ── HERO ── */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(64px,12vw,140px) 0 clamp(56px,9vw,96px);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-eyebrow{
+    font-size:12px;letter-spacing:.42em;color:var(--rust);
+    font-weight:700;margin-bottom:28px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:48px;align-items:end}
+  .hero-h1{
+    font-size:clamp(34px,7vw,76px);
+    font-weight:800;line-height:1.12;letter-spacing:.01em;
+  }
+  .hero-h1 .rust{color:var(--rust)}
+  .hero-sub{margin-top:24px;font-size:clamp(14px,1.6vw,17px);color:#c9c2b2;max-width:34ch}
+  .stats{
+    border-left:1px solid var(--line);padding-left:28px;
+    display:flex;flex-direction:column;gap:22px;
+  }
+  .stat .n{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--paper);line-height:1}
+  .stat .l{font-size:11px;letter-spacing:.22em;color:var(--muted);margin-top:6px}
+  .stat .n small{font-size:.5em;font-weight:600;margin-left:4px;color:#c9c2b2}
+
+  /* ── SECTION FRAME ── */
+  .sec{padding:clamp(56px,9vw,104px) 0;border-bottom:1px solid rgba(58,53,43,.18)}
+  .sec-hdr{display:flex;align-items:baseline;gap:18px;margin-bottom:48px}
+  .sec-num{font-size:13px;font-weight:800;color:var(--rust);letter-spacing:.1em}
+  .sec-ttl{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:.04em}
+
+  /* ── 哲学 ── */
+  .phil{font-size:clamp(19px,2.6vw,30px);font-weight:700;line-height:1.7;max-width:24ch}
+  .phil .rust{color:var(--rust)}
+  .phil-body{margin-top:28px;max-width:62ch;color:#403a30;font-size:clamp(14px,1.5vw,16px)}
+
+  /* ── 生産（工程） ── */
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(58,53,43,.18);border:1px solid rgba(58,53,43,.18)}
+  .step{background:var(--paper);padding:26px 22px}
+  .step .sn{font-size:11px;letter-spacing:.2em;color:var(--rust);font-weight:700}
+  .step .st{font-size:16px;font-weight:800;margin-top:10px}
+  .step .sd{font-size:13px;color:#5c554a;margin-top:8px;line-height:1.7}
+
+  /* ── 強み ── */
+  .sl{display:flex;flex-direction:column;gap:0}
+  .si{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid rgba(58,53,43,.18)}
+  .si:first-child{border-top:none}
+  .sm{font-size:26px;font-weight:800;color:var(--rust);font-style:italic;letter-spacing:.02em}
+  .sh{font-size:17px;font-weight:800}
+  .sd{font-size:14px;color:#4f483d;margin-top:8px;line-height:1.8}
+
+  /* ── 発信（note） ── */
+  .note-band{background:var(--ink);color:var(--paper);border-radius:0;padding:clamp(34px,5vw,52px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+  .note-band .nt{font-size:clamp(18px,2.4vw,26px);font-weight:800}
+  .note-band .nd{font-size:14px;color:#c9c2b2;margin-top:10px;max-width:46ch}
+  .note-btn{display:inline-block;background:var(--rust);color:#fff;text-decoration:none;font-weight:800;padding:16px 30px;letter-spacing:.06em;white-space:nowrap;transition:transform .15s ease,background .15s ease}
+  .note-btn:hover{background:#cf5a28;transform:translateY(-2px)}
+  .note-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+  /* ── 会社概要 ── */
+  .cg{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+  .ir{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid rgba(58,53,43,.16)}
+  .ik{font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:700;padding-top:3px}
+  .iv{font-size:15px;font-weight:600}
+  .cal{font-size:12px;letter-spacing:.24em;color:var(--rust);font-weight:700;margin-bottom:14px}
+  .caa{font-size:16px;font-weight:700;line-height:1.9}
+  .mp{margin-top:18px;border:1px solid rgba(58,53,43,.25);height:160px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;letter-spacing:.2em}
+
+  /* ── FOOTER ── */
+  footer{background:var(--ink);color:var(--paper);padding:56px 0}
+  .fb{font-size:clamp(22px,4vw,34px);font-weight:800;letter-spacing:.08em}
+  .fc{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.06em}
+  .fct{font-size:13px;color:#c9c2b2;margin-top:20px;line-height:1.9}
+
+  @media(max-width:720px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .stats{flex-direction:row;flex-wrap:wrap;gap:24px 36px;border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:26px}
+    .cg{grid-template-columns:1fr;gap:32px}
+    .note-band{grid-template-columns:1fr}
+    .si{grid-template-columns:48px 1fr;gap:16px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">NOGUCHI MERIYASU — SINCE 1957 / NAGOYA</div>
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-h1">作り続けて、<br>半世紀。<br><span class="rust">一枚に宿る</span>仕事。</h1>
+        <p class="hero-sub">名古屋・中村区の縫製メーカー。カットソーの企画から縫製、特殊加工までを社内で握る。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">1957<small>創業</small></div><div class="l">FOUNDED</div></div>
+        <div class="stat"><div class="n">27<small>名</small></div><div class="l">STAFF</div></div>
+        <div class="stat"><div class="n">30<small>台</small></div><div class="l">SEWING MACHINES</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 01 哲学 -->
+<section class="sec" id="philosophy">
+  <div class="wrap">
+    <div class="sec-hdr"><div class="sec-num">01</div><div class="sec-ttl">私たちの仕事 — PHILOSOPHY</div></div>
+    <p class="phil">図面の一本の線を、<span class="rust">着られる一枚</span>に変える。それが縫製の仕事です。</p>
+    <p class="phil-body">合資会社 野口莫大小は、1957年の創業以来、名古屋でカットソーを縫い続けてきました。社内にパタンナーを抱え、サンプルづくりから量産、特殊加工までを一貫して手がけます。小ロットの試作にも、協力工場と組んだ大ロットの量産にも、同じ目で品質を通す。長く続けてきたからこそできる、現場の判断がここにあります。</p>
+  </div>
+</section>
+
+<!-- 02 生産 -->
+<section class="sec" id="production">
+  <div class="wrap">
+    <div class="sec-hdr"><div class="sec-num">02</div><div class="sec-ttl">生産の流れ — PRODUCTION</div></div>
+    <div class="flow">
+      <div class="step"><div class="sn">STEP 01</div><div class="st">パターン</div><div class="sd">社内パタンナー常駐。サンプル作成・修正が即日可能。</div></div>
+      <div class="step"><div class="sn">STEP 02</div><div class="st">裁断・縫製</div><div class="sd">工業用ミシン30台。特殊ミシンも完備し幅広い仕様に対応。</div></div>
+      <div class="step"><div class="sn">STEP 03</div><div class="st">特殊加工</div><div class="sd">プリント・染め・加工まで社内および協力工場で対応。</div></div>
+      <div class="step"><div class="sn">STEP 04</div><div class="st">仕上げ・納品</div><div class="sd">検品を経て納品。小ロットから大ロットまで一貫対応。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 強み -->
+<section class="sec" id="strengths">
+  <div class="wrap">
+    <div class="sec-hdr"><div class="sec-num">03</div><div class="sec-ttl">強み — STRENGTHS</div></div>
+    <div class="sl">
+      <div class="si"><div class="sm">I</div><div><div class="sh">小ロット・短サイクル対応</div><div class="sd">社内スタッフが多数いるため小ロット短サイクルに柔軟対応。社内パタンナー常駐でサンプル作成・修正が即日可能。</div></div></div>
+      <div class="si"><div class="sm">II</div><div><div class="sh">大ロットも対応 — 協力工場ネットワーク</div><div class="sd">協力工場が多数あるため、大ロット品の生産にも対応できます。</div></div></div>
+      <div class="si"><div class="sm">III</div><div><div class="sh">特殊ミシン完備</div><div class="sd">フラットシーマー10台（協力工場含む）／ 二重環二本針ミシン ／ ピコットミシン ／ ジグザグミシン 等。</div></div></div>
+      <div class="si"><div class="sm">IV</div><div><div class="sh">プリント加工 / 特殊加工</div><div class="sd">本抜染 ／ 植毛フロッキー ／ バイオ加工 ／ ストーンバイオ ／ アルカリ脱色 ／ 硫化染め ／ 削り加工 ／ 抽染（機械・手作業）。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 発信 note -->
+<section class="sec" id="note">
+  <div class="wrap">
+    <div class="note-band">
+      <div>
+        <div class="nt">現場の話を、noteで綴っています。</div>
+        <div class="nd">縫製技術、小ロット対応の裏側、工場の日々。会社案内だけでは伝わらないことを、ことばで残していきます。</div>
+      </div>
+      <!-- ↓ noteアカウント作成後、href を自分のnote URLに差し替え -->
+      <a class="note-btn" href="https://note.com/" target="_blank" rel="noopener">noteを読む →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 会社概要 -->
+<section class="sec" id="company" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-hdr"><div class="sec-num">04</div><div class="sec-ttl">会社概要 — COMPANY INFO</div></div>
+    <div class="cg">
+      <div>
+        <div class="ir"><div class="ik">会社名</div><div class="iv">合資会社 野口莫大小</div></div>
+        <div class="ir"><div class="ik">代表者</div><div class="iv">野口卓嗣（ノグチ タカシ）</div></div>
+        <div class="ir"><div class="ik">創業</div><div class="iv">1957年3月</div></div>
+        <div class="ir"><div class="ik">従業員</div><div class="iv">27名（パタンナー 3名 ／ 縫製スタッフ 14名）</div></div>
+        <div class="ir"><div class="ik">設備</div><div class="iv">工業用ミシン 30台</div></div>
+        <div class="ir"><div class="ik">TEL / FAX</div><div class="iv">052-451-7062 ／ 052-451-8344</div></div>
+        <div class="ir"><div class="ik">E-MAIL</div><div class="iv">n-meriyasu@image.ocn.ne.jp</div></div>
+      </div>
+      <div>
+        <div class="cal">ACCESS</div>
+        <div class="caa">〒453-0013<br>愛知県名古屋市<br>中村区亀島1-5-26</div>
+        <div class="mp">MAP — 名古屋市中村区亀島</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fb">NOGUCHI MERIYASU</div>
+    <div class="fc">© 合資会社 野口莫大小 — 創業 1957</div>
+    <div class="fct">052-451-7062<br>n-meriyasu@image.ocn.ne.jp</div>
+  </div>
+</footer>
+
+</body>
+</html>
