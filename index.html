@@ -30,6 +30,9 @@
   img{max-width:100%;display:block}
   ::selection{background:#f4c20d;color:#161412}
   a:focus-visible,button:focus-visible{outline:2px solid #e7572b;outline-offset:3px}
+  /* 改行制御：u=この単位の途中では折らない / brPC=広い画面だけ改行 */
+  .u{display:inline-block}
+  @media(max-width:640px){ .brPC{display:none} }
   @keyframes psRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
   /* skip link */
@@ -183,14 +186,15 @@
       </div>
       <div class="g-2col" style="display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,90px);align-items:start">
         <div>
-<p style="font-size:clamp(24px,3.4vw,39px);font-weight:700;line-height:1.55;letter-spacing:.01em">
-  <span style="font-size:1.25em;">作る　造る　創る</span><br>
-  良い製品を作る　売れる物を造る　面白い物を創る　好きな物をつくる
+<p style="font-size:clamp(24px,3.4vw,39px);font-weight:700;line-height:1.55;letter-spacing:.01em;text-wrap:balance">
+  <span class="u" style="font-size:1.25em">作る　造る　創る</span><br class="brPC">
+  <span class="u">良い製品を作る　売れる物を造る</span><br class="brPC">
+  <span class="u">面白い物を創る　好きな物をつくる</span>
 </p>
         </div>
         <div>
-          <p style="font-size:clamp(14px,1.45vw,16px);color:#5a5347;line-height:2.1">合資会社 野口莫大小は1957年創業以来、名古屋でカットソーを縫い続けてきました。社内にパタンナーを抱え、　　　　　　　サンプルづくりから量産から特殊加工まで一貫して手がけます。</p>
-          <p style="font-size:clamp(14px,1.45vw,16px);color:#5a5347;line-height:2.1;margin-top:20px">小ロットの試作にも、協力工場と組んだ大ロットの量産にも、　同じ目で品質を通す。　　　　　　　　　　　　　　　　　　　長く続けてきたからこそできる、現場の判断がここにあります。</p>
+          <p style="font-size:clamp(14px,1.45vw,16px);color:#5a5347;line-height:2.1;text-wrap:pretty"><span class="u">合資会社 野口莫大小は1957年創業以来、</span><br class="brPC"><span class="u">名古屋でカットソーを縫い続けてきました。</span><br class="brPC"><span class="u">社内にパタンナーを抱え、サンプルづくりから量産、</span><br class="brPC"><span class="u">特殊加工まで一貫して手がけます。</span></p>
+          <p style="font-size:clamp(14px,1.45vw,16px);color:#5a5347;line-height:2.1;margin-top:20px;text-wrap:pretty"><span class="u">小ロットの試作にも、協力工場と組んだ大ロットの量産にも、</span><br class="brPC"><span class="u">同じ目で品質を通す。</span><br class="brPC"><span class="u">長く続けてきたからこそできる、現場の判断がここにあります。</span></p>
         </div>
       </div>
     </div>
