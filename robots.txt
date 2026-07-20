@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noguchi-meriyasu.noguchimeriyasu-co.workers.dev/sitemap.xml
